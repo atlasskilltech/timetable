@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATLAS Timetable - Dashboard</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <%- include('partials/sidebar', { active: 'dashboard' }) %>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <div class="page-header">
+        <div class="header-top">
+          <div>
+            <h1 class="page-title">Dashboard</h1>
+            <p class="page-subtitle">Overview of timetable statistics and metrics</p>
+          </div>
+          <div class="header-stats">
+            <div class="header-stat-item">
+              <span class="stat-number" id="totalScheduled">0</span>
+              <span class="stat-label">SCHEDULED</span>
+            </div>
+            <div class="header-stat-item">
+              <span class="stat-number unscheduled" id="totalUnscheduled">0</span>
+              <span class="stat-label">UNSCHEDULED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters Section -->
+      <div class="filters-container">
+        <div class="filter-grid">
+          <div class="filter-item">
+            <label>📅 DATE</label>
+            <input type="date" id="dateFilter" class="filter-input">
+          </div>
+          
+          <div class="filter-item">
+            <label>🎓 PROGRAM</label>
+            <select id="programFilter" class="filter-select">
+              <option value="all">All Programs</option>
+            </select>
+          </div>
+          
+          <div class="filter-item">
+            <label>📚 YEAR</label>
+            <select id="yearFilter" class="filter-select">
+              <option value="all">All Years</option>
+            </select>
+          </div>
+          
+          <div class="filter-item">
+            <label>📋 SECTION</label>
+            <select id="sectionFilter" class="filter-select">
+              <option value="all">All Sections</option>
+            </select>
+          </div>
+          
+          <div class="filter-item">
+            <label>👨‍🏫 FACULTY</label>
+            <select id="facultyFilter" class="filter-select">
+              <option value="all">All Faculty</option>
+            </select>
+          </div>
+          
+          <div class="filter-item">
+            <label>🏢 ROOM</label>
+            <select id="roomFilter" class="filter-select">
+              <option value="all">All Rooms</option>
+            </select>
+          </div>
+          
+          <div class="filter-item">
+            <label>📖 SUBJECT</label>
+            <select id="subjectFilter" class="filter-select">
+              <option value="all">All Subjects</option>
+            </select>
+          </div>
+          
+          <div class="filter-item">
+            <label>📅 DAY</label>
+            <select id="dayFilter" class="filter-select">
+              <option value="all">All Days</option>
+            </select>
+          </div>
+          
+          <div class="filter-item">
+            <label>🕐 TIME</label>
+            <select id="timeFilter" class="filter-select">
+              <option value="all">All Times</option>
+            </select>
+          </div>
+        </div>
+        
+        <button class="clear-filters-btn" id="clearFilters">Clear</button>
+      </div>
+
+      <!-- Timetable Version Info -->
+      <div class="timetable-version">
+        <div class="version-info">
+          <div class="version-item">
+            <span class="version-label">TIMETABLE VERSION</span>
+            <span class="version-value">1</span>
+          </div>
+          <div class="version-item">
+            <span class="version-label">STATUS</span>
+            <span class="status-badge status-generated">GENERATED</span>
+          </div>
+          <div class="version-item">
+            <span class="version-label">TOTAL EVENTS</span>
+            <span class="version-value" id="totalEvents">0</span>
+          </div>
+          <div class="version-item">
+            <span class="version-label">GENERATED ON</span>
+            <span class="version-value" id="generatedDate">-</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timetable Cards -->
+      <div id="timetableContainer" class="timetable-cards">
+        <!-- Cards will be dynamically loaded here -->
+      </div>
+
+      <!-- Loading State -->
+      <div id="loadingState" class="loading-state" style="display: none;">
+        <div class="spinner"></div>
+        <p>Loading timetable data...</p>
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <div class="empty-icon">📅</div>
+        <h3>No classes found</h3>
+        <p>Try adjusting your filters to see more results</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
