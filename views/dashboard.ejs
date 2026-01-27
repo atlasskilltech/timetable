@@ -1,110 +1,259 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATLAS Timetable - Dashboard</title>
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="layout">
-    <!-- Sidebar -->
-    <%- include('partials/sidebar', { active: 'dashboard' }) %>
-    
-    <!-- Main Content -->
-    <div class="main-content">
-      <!-- Header -->
-      <div class="page-header">
-        <div class="header-top">
-          <div>
-            <h1 class="page-title">Dashboard</h1>
-            <p class="page-subtitle">Overview of timetable statistics and metrics</p>
-          </div>
-          <div class="header-stats">
-            <div class="header-stat-item">
-              <span class="stat-number" id="totalScheduled">0</span>
-              <span class="stat-label">SCHEDULED</span>
-            </div>
-            <div class="header-stat-item">
-              <span class="stat-number unscheduled" id="totalUnscheduled">0</span>
-              <span class="stat-label">UNSCHEDULED</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Filters Section -->
-      <div class="filters-container">
-        <div class="filter-grid">
-          <div class="filter-item">
-            <label>📅 DATE</label>
-            <input type="date" id="dateFilter" class="filter-input">
+     <%- include('partials/header', { active: 'dashboard' }) %>
+  
+  
+ 
+<div class="p-[32px]">
+     
+      <div class="flex flex-wrap items-end
+            gap-[4px]
+            py-[8px] px-[16px]
+            bg-[#ffffff]
+            border border-[#e2e8f0]
+            rounded-[12px]
+            mb-[16px]">
+
+             <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
+            <label class="flex items-center gap-[4px]
+            text-[0.7rem] font-[600]
+            text-[#94a3b8]
+            uppercase tracking-[0.05em]">DATE</label>
+            <input class="flex items-center justify-between
+            py-[6px] px-[10px]
+            bg-[#ffffff]
+            border border-[#e2e8f0]
+            rounded-[8px]
+            cursor-pointer
+            text-[0.85rem]
+            min-h-[32px]
+            gap-[4px]
+            transition-all duration-[150ms] ease-in-out text-[#64748b]" type="date" id="dateFilter" class="filter-input">
           </div>
           
-          <div class="filter-item">
-            <label>🎓 PROGRAM</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
+            <label class="flex items-center gap-[4px]
+            text-[0.7rem] font-[600]
+            text-[#94a3b8]
+            uppercase tracking-[0.05em]"> PROGRAM</label>
             <select id="programFilter" class="filter-select">
               <option value="all">All Programs</option>
             </select>
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           
-          <div class="filter-item">
-            <label>📚 YEAR</label>
+           <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
+            <label class="flex items-center gap-[4px]
+            text-[0.7rem] font-[600]
+            text-[#94a3b8]
+            uppercase tracking-[0.05em]"> YEAR</label>
+
+
+
+
+
+
+           <div class="relative min-w-[120px] multi-select group " id="dashProgramFilter" data-placeholder="All Programs">
+
+
+
+            <div class="flex items-center justify-between
+            py-[6px] px-[10px]
+            bg-[#ffffff]
+            border border-[#e2e8f0]
+            rounded-[8px]
+            cursor-pointer
+            text-[0.85rem]
+            min-h-[32px]
+            gap-[4px]
+            transition-all duration-[150ms] ease-in-out text-[#64748b]" id="toggleMultiSelect"  data-text="All Years"  onclick="toggleMultiSelect(this)">
+
+            
+            
+
+
+            </div>
+
+
+ <div class="absolute
+            top-[calc(100%+4px)]
+            left-0 right-0
+            bg-[#ffffff]
+            border border-[#e2e8f0]
+            rounded-[8px]
+            shadow-[0_10px_15px_-3px_rgb(0_0_0_/_0.1),_0_4px_6px_-4px_rgb(0_0_0_/_0.1)]
+            z-[1000]
+            max-h-[250px]
+            overflow-y-auto
+            hidden group-[.open]:block"  id="yearFilter">
+      
+
+
+
+
+
+
+
+
+        </div>
+                    
+        
+        
+        
+        </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
+            <label class="flex items-center gap-[4px]
+            text-[0.7rem] font-[600]
+            text-[#94a3b8]
+            uppercase tracking-[0.05em]"> YEAR</label>
             <select id="yearFilter" class="filter-select">
               <option value="all">All Years</option>
             </select>
           </div>
+
+
+
+
+
           
-          <div class="filter-item">
-            <label>📋 SECTION</label>
+           <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
+            <label class="flex items-center gap-[4px]
+            text-[0.7rem] font-[600]
+            text-[#94a3b8]
+            uppercase tracking-[0.05em]"> SECTION</label>
             <select id="sectionFilter" class="filter-select">
               <option value="all">All Sections</option>
             </select>
           </div>
+         
+         
           
-          <div class="filter-item">
-            <label>👨‍🏫 FACULTY</label>
+         
+         
+          
+          <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
+            <label class="flex items-center gap-[4px]
+            text-[0.7rem] font-[600]
+            text-[#94a3b8]
+            uppercase tracking-[0.05em]">FACULTY</label>
             <select id="facultyFilter" class="filter-select">
               <option value="all">All Faculty</option>
             </select>
           </div>
           
-          <div class="filter-item">
-            <label>🏢 ROOM</label>
+          <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
+            <label class="flex items-center gap-[4px]
+            text-[0.7rem] font-[600]
+            text-[#94a3b8]
+            uppercase tracking-[0.05em]">ROOM</label>
             <select id="roomFilter" class="filter-select">
               <option value="all">All Rooms</option>
             </select>
           </div>
           
-          <div class="filter-item">
-            <label>📖 SUBJECT</label>
+          <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
+            <label class="flex items-center gap-[4px]
+            text-[0.7rem] font-[600]
+            text-[#94a3b8]
+            uppercase tracking-[0.05em]">SUBJECT</label>
             <select id="subjectFilter" class="filter-select">
               <option value="all">All Subjects</option>
             </select>
           </div>
           
-          <div class="filter-item">
-            <label>📅 DAY</label>
+          <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
+            <label class="flex items-center gap-[4px]
+            text-[0.7rem] font-[600]
+            text-[#94a3b8]
+            uppercase tracking-[0.05em]"> DAY</label>
             <select id="dayFilter" class="filter-select">
               <option value="all">All Days</option>
             </select>
           </div>
           
-          <div class="filter-item">
-            <label>🕐 TIME</label>
+          <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
+            <label class="flex items-center gap-[4px]
+            text-[0.7rem] font-[600]
+            text-[#94a3b8]
+            uppercase tracking-[0.05em]"> TIME</label>
             <select id="timeFilter" class="filter-select">
               <option value="all">All Times</option>
             </select>
           </div>
-        </div>
+    
         
         <button class="clear-filters-btn" id="clearFilters">Clear</button>
       </div>
 
-      <!-- Timetable Version Info -->
+      
       <div class="timetable-version">
         <div class="version-info">
           <div class="version-item">
@@ -126,26 +275,29 @@
         </div>
       </div>
 
-      <!-- Timetable Cards -->
+     
       <div id="timetableContainer" class="timetable-cards">
-        <!-- Cards will be dynamically loaded here -->
+       
       </div>
 
-      <!-- Loading State -->
+     
       <div id="loadingState" class="loading-state" style="display: none;">
         <div class="spinner"></div>
         <p>Loading timetable data...</p>
       </div>
 
-      <!-- Empty State -->
+     
       <div id="emptyState" class="empty-state" style="display: none;">
         <div class="empty-icon">📅</div>
         <h3>No classes found</h3>
         <p>Try adjusting your filters to see more results</p>
       </div>
+
+      </div>
     </div>
   </div>
 
   <script src="/js/dashboard.js"></script>
+    <script src="/js/common.js"></script>
 </body>
 </html>

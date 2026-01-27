@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATLAS Timetable - Classrooms</title>
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="layout">
-    <%- include('partials/sidebar', { active: 'classrooms' }) %>
-    
-    <div class="main-content">
-      <div class="page-header">
-        <div class="header-top">
-          <div>
-            <h1 class="page-title">Classrooms</h1>
-            <p class="page-subtitle">Track classroom utilization and availability</p>
-          </div>
-        </div>
-      </div>
+<%- include('partials/header', { active: 'classrooms' }) %>
+  
+
 
       <div class="filters-container">
         <div class="filter-grid" style="grid-template-columns: repeat(3, 1fr);">
