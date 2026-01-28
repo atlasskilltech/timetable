@@ -11,24 +11,9 @@
             bg-[#ffffff]
             border border-[#e2e8f0]
             rounded-[12px]
-            mb-[16px]">
+            mb-[16px]" >
 
-             <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
-            <label class="flex items-center gap-[4px]
-            text-[0.7rem] font-[600]
-            text-[#94a3b8]
-            uppercase tracking-[0.05em]">DATE</label>
-            <input class="flex items-center justify-between
-            py-[6px] px-[10px]
-            bg-[#ffffff]
-            border border-[#e2e8f0]
-            rounded-[8px]
-            cursor-pointer
-            text-[0.85rem]
-            min-h-[32px]
-            gap-[4px]
-            transition-all duration-[150ms] ease-in-out text-[#64748b]" type="date" id="dateFilter" class="filter-input">
-          </div>
+           
           
 
 
@@ -39,6 +24,26 @@
 
 
 
+<!-- filterDate field here  -->
+
+ <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0" id="filterDate">
+           
+    
+    
+    
+   
+
+
+
+
+
+
+
+
+          </div>
+
+
+<!-- filterDate field here  -->
 
 
 
@@ -49,20 +54,230 @@
 
 
 
-         <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
-            <label class="flex items-center gap-[4px]
-            text-[0.7rem] font-[600]
-            text-[#94a3b8]
-            uppercase tracking-[0.05em]"> PROGRAM</label>
-            <select id="programFilter" class="filter-select">
-              <option value="all">All Programs</option>
-            </select>
+
+       
+
+<!-- program field here  -->
+
+ <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0" id="filterProgram">
+           
+    
+    
+    
+   
+
+
+
+
+
+
+
+
+          </div>
+
+
+<!-- program field here  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- my field is here year  -->
+
+
+
+ <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0" id="filterYear">
+           
+    
+    
+    
+   
+
+
+
+
+
+
+
+
           </div>
 
 
 
 
 
+
+
+
+
+<!-- my field is here  -->
+
+
+
+
+
+
+
+
+
+
+<!-- Sections field here  -->
+
+ <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0" id="filterSection">
+           
+    
+    
+    
+   
+
+ </div>
+
+
+<!-- Sections field here  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- faculty field here  -->
+
+ <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0" id="filterFaculty">
+           
+    
+    
+    
+   
+
+ </div>
+
+
+<!-- faculty field here  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Rooms field here  -->
+
+ <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0" id="filterRoom">
+           
+    
+    
+    
+   
+
+ </div>
+
+
+<!-- Rooms field here  -->
+
+
+
+
+   
+
+
+
+<!-- Subject field here  -->
+
+ <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0" id="filterSubject">
+           
+    
+    
+    
+   
+
+ </div>
+
+
+<!-- Subject field here  -->
+
+
+
+
+
+
+   
+
+
+
+<!-- All Day field here  -->
+
+ <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0" id="filterDay">
+           
+    
+    
+    
+   
+
+ </div>
+
+
+<!-- All Day field here  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- All Time field here  -->
+
+ <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0" id="filterTime">
+           
+    
+    
+    
+   
+
+ </div>
+
+
+<!-- All Time field here  -->
 
 
 
@@ -73,210 +288,66 @@
 
 
           
-           <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
-            <label class="flex items-center gap-[4px]
-            text-[0.7rem] font-[600]
-            text-[#94a3b8]
-            uppercase tracking-[0.05em]"> YEAR</label>
-
-
-
-
-
-
-           <div class="relative min-w-[120px] multi-select group " id="dashProgramFilter" data-placeholder="All Programs">
-
-
-
-            <div class="flex items-center justify-between
-            py-[6px] px-[10px]
-            bg-[#ffffff]
-            border border-[#e2e8f0]
-            rounded-[8px]
-            cursor-pointer
-            text-[0.85rem]
-            min-h-[32px]
-            gap-[4px]
-            transition-all duration-[150ms] ease-in-out text-[#64748b]" id="toggleMultiSelect"  data-text="All Years"  onclick="toggleMultiSelect(this)">
-
-            
-            
-
-
-            </div>
-
-
- <div class="absolute
-            top-[calc(100%+4px)]
-            left-0 right-0
-            bg-[#ffffff]
-            border border-[#e2e8f0]
-            rounded-[8px]
-            shadow-[0_10px_15px_-3px_rgb(0_0_0_/_0.1),_0_4px_6px_-4px_rgb(0_0_0_/_0.1)]
-            z-[1000]
-            max-h-[250px]
-            overflow-y-auto
-            hidden group-[.open]:block"  id="yearFilter">
-      
-
-
-
-
-
-
-
-
-        </div>
-                    
-        
-        
-        
-        </div>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-           <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
-            <label class="flex items-center gap-[4px]
-            text-[0.7rem] font-[600]
-            text-[#94a3b8]
-            uppercase tracking-[0.05em]"> YEAR</label>
-            <select id="yearFilter" class="filter-select">
-              <option value="all">All Years</option>
-            </select>
-          </div>
-
-
-
-
-
           
-           <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
-            <label class="flex items-center gap-[4px]
-            text-[0.7rem] font-[600]
-            text-[#94a3b8]
-            uppercase tracking-[0.05em]"> SECTION</label>
-            <select id="sectionFilter" class="filter-select">
-              <option value="all">All Sections</option>
-            </select>
-          </div>
+         
+          
          
          
           
          
+          
+         
          
           
-          <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
-            <label class="flex items-center gap-[4px]
-            text-[0.7rem] font-[600]
-            text-[#94a3b8]
-            uppercase tracking-[0.05em]">FACULTY</label>
-            <select id="facultyFilter" class="filter-select">
-              <option value="all">All Faculty</option>
-            </select>
-          </div>
-          
-          <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
-            <label class="flex items-center gap-[4px]
-            text-[0.7rem] font-[600]
-            text-[#94a3b8]
-            uppercase tracking-[0.05em]">ROOM</label>
-            <select id="roomFilter" class="filter-select">
-              <option value="all">All Rooms</option>
-            </select>
-          </div>
-          
-          <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
-            <label class="flex items-center gap-[4px]
-            text-[0.7rem] font-[600]
-            text-[#94a3b8]
-            uppercase tracking-[0.05em]">SUBJECT</label>
-            <select id="subjectFilter" class="filter-select">
-              <option value="all">All Subjects</option>
-            </select>
-          </div>
-          
-          <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
-            <label class="flex items-center gap-[4px]
-            text-[0.7rem] font-[600]
-            text-[#94a3b8]
-            uppercase tracking-[0.05em]"> DAY</label>
-            <select id="dayFilter" class="filter-select">
-              <option value="all">All Days</option>
-            </select>
-          </div>
-          
-          <div class="min-w-[100px] flex flex-col gap-[2px] shrink basis-auto grow-0">
-            <label class="flex items-center gap-[4px]
-            text-[0.7rem] font-[600]
-            text-[#94a3b8]
-            uppercase tracking-[0.05em]"> TIME</label>
-            <select id="timeFilter" class="filter-select">
-              <option value="all">All Times</option>
-            </select>
-          </div>
+
     
         
-        <button class="clear-filters-btn" id="clearFilters">Clear</button>
+        <button class="bg-slate-100 text-slate-800 border border-slate-200 inline-flex items-center gap-2 px-4 py-2 rounded-lg
+text-[0.85rem] font-medium cursor-pointer
+transition-all duration-[150ms] ease-in-out h-fit whitespace-nowrap" id="clearFilters">Clear</button>
+
+
+
+
+
+
+
       </div>
 
       
-      <div class="timetable-version">
-        <div class="version-info">
-          <div class="version-item">
-            <span class="version-label">TIMETABLE VERSION</span>
-            <span class="version-value">1</span>
+
+
+
+
+
+
+
+
+
+
+      <div class="flex bg-[#1e293b] rounded-[12px] px-[24px] py-[16px] mb-[24px] gap-[32px]">
+        
+          <div class="flex flex-col gap-[2px]">
+            <span class="text-[0.7rem] text-[#94a3b8] uppercase tracking-[0.05em]">TIMETABLE VERSION</span>
+            <span class="text-[1rem] font-[600] text-white">1</span>
           </div>
-          <div class="version-item">
-            <span class="version-label">STATUS</span>
-            <span class="status-badge status-generated">GENERATED</span>
+          <div class="flex flex-col gap-[2px]">
+            <span class="text-[0.7rem] text-[#94a3b8] uppercase tracking-[0.05em]">STATUS</span>
+            <span class="inline-block bg-[rgba(16,185,129,0.2)] text-[#34d399] px-[10px] py-[2px] rounded-[4px] text-[0.75rem] font-[600]">GENERATED</span>
           </div>
-          <div class="version-item">
-            <span class="version-label">TOTAL EVENTS</span>
-            <span class="version-value" id="totalEvents">0</span>
+          <div class="flex flex-col gap-[2px]">
+            <span class="text-[0.7rem] text-[#94a3b8] uppercase tracking-[0.05em]">TOTAL EVENTS</span>
+            <span class="text-[1rem] font-[600] text-white" id="totalEvents">0</span>
           </div>
-          <div class="version-item">
-            <span class="version-label">GENERATED ON</span>
-            <span class="version-value" id="generatedDate">-</span>
+          <div class="flex flex-col gap-[2px]">
+            <span class="text-[0.7rem] text-[#94a3b8] uppercase tracking-[0.05em]">GENERATED ON</span>
+            <span class="text-[1rem] font-[600] text-white" id="generatedDate">-</span>
           </div>
-        </div>
+        
       </div>
 
      
-      <div id="timetableContainer" class="timetable-cards">
+      <div id="timetableContainer" class="bg-white border border-[#e2e8f0] rounded-[12px] overflow-hidden">
        
       </div>
 
@@ -298,6 +369,6 @@
   </div>
 
   <script src="/js/dashboard.js"></script>
-    <script src="/js/common.js"></script>
+ 
 </body>
 </html>
