@@ -76,7 +76,7 @@ function populateDateFilter() {
         text-[0.85rem]
         min-h-[32px]
         gap-[4px]
-        transition-all duration-[150ms] ease-in-out text-[#64748b]"
+        transition-all duration-[150ms] ease-in-out text-[#64748b] hover:border-[#10b981] group-[.open]:border-[#10b981] group-[.open]:ring-2 group-[.open]:ring-[rgba(16,185,129,0.1)]"
         onclick="toggleMultiSelect(this)">
 
         <span id="dateHeaderText">${todayStr}</span>
@@ -181,7 +181,7 @@ function populatePrograms(programs) {
         text-[0.85rem]
         min-h-[32px]
         gap-[4px]
-        transition-all duration-[150ms] ease-in-out text-[#64748b]"
+        transition-all duration-[150ms] ease-in-out text-[#64748b] hover:border-[#10b981] group-[.open]:border-[#10b981] group-[.open]:ring-2 group-[.open]:ring-[rgba(16,185,129,0.1)]"
         id="toggleMultiSelect"
         data-text="All Years"
         onclick="toggleMultiSelect(this)">
@@ -289,7 +289,7 @@ function populateYears(years) {
         text-[0.85rem]
         min-h-[32px]
         gap-[4px]
-        transition-all duration-[150ms] ease-in-out text-[#64748b]"
+        transition-all duration-[150ms] ease-in-out text-[#64748b] hover:border-[#10b981] group-[.open]:border-[#10b981] group-[.open]:ring-2 group-[.open]:ring-[rgba(16,185,129,0.1)]"
         id="toggleMultiSelect"
         data-text="All Years"
         onclick="toggleMultiSelect(this)">
@@ -398,7 +398,7 @@ function populateSections(sections) {
         text-[0.85rem]
         min-h-[32px]
         gap-[4px]
-        transition-all duration-[150ms] ease-in-out text-[#64748b]"
+        transition-all duration-[150ms] ease-in-out text-[#64748b] hover:border-[#10b981] group-[.open]:border-[#10b981] group-[.open]:ring-2 group-[.open]:ring-[rgba(16,185,129,0.1)]"
         id="toggleMultiSelect"
         data-text="All Years"
         onclick="toggleMultiSelect(this)">
@@ -503,7 +503,7 @@ function populateFaculties(faculties) {
         text-[0.85rem]
         min-h-[32px]
         gap-[4px]
-        transition-all duration-[150ms] ease-in-out text-[#64748b]"
+        transition-all duration-[150ms] ease-in-out text-[#64748b] hover:border-[#10b981] group-[.open]:border-[#10b981] group-[.open]:ring-2 group-[.open]:ring-[rgba(16,185,129,0.1)]"
         id="toggleMultiSelect"
         data-text="All Years"
         onclick="toggleMultiSelect(this)">
@@ -608,7 +608,7 @@ function populateRooms(rooms) {
         text-[0.85rem]
         min-h-[32px]
         gap-[4px]
-        transition-all duration-[150ms] ease-in-out text-[#64748b]"
+        transition-all duration-[150ms] ease-in-out text-[#64748b] hover:border-[#10b981] group-[.open]:border-[#10b981] group-[.open]:ring-2 group-[.open]:ring-[rgba(16,185,129,0.1)]"
         id="toggleMultiSelect"
         data-text="All Years"
         onclick="toggleMultiSelect(this)">
@@ -713,7 +713,7 @@ function populateSubjects(subjects) {
         text-[0.85rem]
         min-h-[32px]
         gap-[4px]
-        transition-all duration-[150ms] ease-in-out text-[#64748b]"
+        transition-all duration-[150ms] ease-in-out text-[#64748b] hover:border-[#10b981] group-[.open]:border-[#10b981] group-[.open]:ring-2 group-[.open]:ring-[rgba(16,185,129,0.1)]"
         id="toggleMultiSelect"
         data-text="All Years"
         onclick="toggleMultiSelect(this)">
@@ -817,7 +817,7 @@ function populateDays(days) {
         text-[0.85rem]
         min-h-[32px]
         gap-[4px]
-        transition-all duration-[150ms] ease-in-out text-[#64748b]"
+        transition-all duration-[150ms] ease-in-out text-[#64748b] hover:border-[#10b981] group-[.open]:border-[#10b981] group-[.open]:ring-2 group-[.open]:ring-[rgba(16,185,129,0.1)]"
         id="toggleMultiSelect"
         data-text="All Years"
         onclick="toggleMultiSelect(this)">
@@ -921,7 +921,7 @@ function populateTimes(times) {
         text-[0.85rem]
         min-h-[32px]
         gap-[4px]
-        transition-all duration-[150ms] ease-in-out text-[#64748b]"
+        transition-all duration-[150ms] ease-in-out text-[#64748b] hover:border-[#10b981] group-[.open]:border-[#10b981] group-[.open]:ring-2 group-[.open]:ring-[rgba(16,185,129,0.1)]"
         id="toggleMultiSelect"
         data-text="All Years"
         onclick="toggleMultiSelect(this)">
@@ -1119,7 +1119,7 @@ function renderClassCard(cls) {
     const years = cls.class_year || "";
 
   return `
-    <div class="relative cursor-pointer bg-white border border-[#e2e8f0] rounded-[8px] p-[16px] transition-all duration-[150ms] ease-in-out" data-school="${schoolId}">
+    <div class="relative cursor-pointer bg-white border border-[#e2e8f0] rounded-[8px] p-[16px] transition-all duration-[150ms] ease-in-out hover:border-[#10b981] hover:shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),_0_2px_4px_-2px_rgb(0_0_0_/_0.1)] hover:-translate-y-[1px]" data-school="${schoolId}">
       <div class="flex justify-between items-center mb-[8px] pb-[8px] border-b border-[#f1f5f9]">
         <span class="flex items-center gap-[6px] text-[0.85rem] font-[500] text-[#64748b]">
         <svg class="w-[14px] h-[14px] text-[#94a3b8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
